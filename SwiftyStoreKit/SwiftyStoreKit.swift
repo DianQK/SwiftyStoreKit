@@ -24,6 +24,33 @@
 
 import StoreKit
 
+#if !swift(>=4)
+    public enum SKErrorCode : Int {
+
+        case unknown
+
+        case clientInvalid // client is not allowed to issue the request, etc.
+
+        case paymentCancelled // user cancelled the request, etc.
+
+        case paymentInvalid // purchase identifier was invalid, etc.
+
+        case paymentNotAllowed // this device is not allowed to make the payment
+
+        case storeProductNotAvailable // Product is not available in the current storefront
+
+    //    @available(iOS 9.3, *)
+        case cloudServicePermissionDenied // user has not allowed access to cloud service information
+
+    //    @available(iOS 9.3, *)
+        case cloudServiceNetworkConnectionFailed // the device could not connect to the nework
+
+    //    @available(iOS 10.3, *)
+        case cloudServiceRevoked // user has revoked permission to use this cloud service
+
+    }
+#endif
+
 public class SwiftyStoreKit {
 
     private let productsInfoController: ProductsInfoController
