@@ -24,7 +24,7 @@
 
 import StoreKit
 
-#if !swift(>=4)
+#if !swift(>=3.2)
     public enum SKErrorCode : Int {
 
         case unknown
